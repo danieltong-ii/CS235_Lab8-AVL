@@ -1,18 +1,19 @@
 #pragma once
-#include "BSTInterface.h"
+#include "AVLInterface.h"
 #include "Node.h"
+#include <iostream>
 
 using namespace std;
 
-class BST: public BSTInterface {
+class AVL: public AVLInterface {
 protected:
 	Node *root;
 	bool success = true;
 public:
-	BST() {
+	AVL() {
 		root = NULL;
 	}
-	virtual ~BST() {
+	virtual ~AVL() {
 		clear();
 	}
 
@@ -27,15 +28,16 @@ public:
 	NodeInterface * getRootNode() const;
 
 	/*
-	* Attempts to add the given int to the BST tree
+	* Attempts to add the given int to the AVL tree
 	*
 	* @return true if added
 	* @return false if unsuccessful (i.e. the int is already in tree)
 	*/
 	bool add(int data);
+	bool rebalance(Node*& node);
 
 	/*
-	* Attempts to remove the given int from the BST tree
+	* Attempts to remove the given int from the AVL tree
 	*
 	* @return true if successfully removed
 	* @return false if remove is unsuccessful(i.e. the int is not in the tree)
@@ -47,6 +49,10 @@ public:
 	*/
 	void clear();
 	void recursiveClear(Node *node);
+
+	void rightRotate(Node *& node);
+	void leftRotate(Node *& node);
+	int updateHeight(Node*&X);
 private:
 	bool add(int data,Node*&node);
 	bool remove(int data, Node *&node);

@@ -1,0 +1,16 @@
+Add 1
+Add 2
+Add 3
+Add 1
+PrintBST
+Add 4
+Add 5
+Add 6
+Add 10
+PrintBST
+Add 8
+PrintBST
+Add 7
+PrintBST
+Add 9
+PrintBST

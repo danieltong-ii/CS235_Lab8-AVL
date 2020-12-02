@@ -45,3 +45,8 @@ Node*&Node::getLeft(){
 void Node::modifyData(Node*& node, int number){
 	node->data = number;
 };
+
+int Node::getHeight(){
+	cout << "getHeight" << endl;
+	return height;
+}
